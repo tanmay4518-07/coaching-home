@@ -1,9 +1,13 @@
-// Theme toggle
 const themeBtn = document.getElementById('themeToggle');
+
 themeBtn.onclick = () => {
-  const isLight = document.body.classList.toggle('light');
-  themeBtn.textContent = isLight ? '🌙' : '☀️';
+  const isNowLight = document.body.classList.toggle('light');
+  themeBtn.textContent = isNowLight ? '🌙' : '☀️';
 };
+
+// Set default icon on load
+themeBtn.textContent = document.body.classList.contains('light') ? '🌙' : '☀️';
+
 
 // Language toggle
 const langBtn = document.getElementById('languageToggle');
