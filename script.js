@@ -15,17 +15,16 @@ langBtn.onclick = () => {
   });
 };
 
-// Hover-based parallax effect
-document.querySelectorAll('.parallax').forEach(section => {
-  section.addEventListener('mousemove', (e) => {
-    const rect = section.getBoundingClientRect();
+
+document.querySelectorAll('.card').forEach(card => {
+  card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
     const x = (e.clientX - rect.left) / rect.width - 0.5;
     const y = (e.clientY - rect.top) / rect.height - 0.5;
-    section.style.transform = `rotateX(${ -y * 15 }deg) rotateY(${ x * 15 }deg)`;
+    card.style.transform = `rotateX(${-y * 15}deg) rotateY(${x * 15}deg)`;
   });
 
-  section.addEventListener('mouseleave', () => {
-    section.style.transform = `rotateX(0deg) rotateY(0deg)`;
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = 'rotateX(0deg) rotateY(0deg)';
   });
 });
-
