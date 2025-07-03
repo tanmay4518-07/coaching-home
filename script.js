@@ -25,7 +25,7 @@ document.querySelectorAll('.card').forEach(card => {
     const rect = card.getBoundingClientRect();
     const x = (e.clientX - rect.left) / rect.width - 0.5;
     const y = (e.clientY - rect.top) / rect.height - 0.5;
-    card.style.transform = `rotateX(${ -y * 25 }deg) rotateY(${ x * 25 }deg)`; // ← Increased angle
+    card.style.transform = `rotateX(${ -y * 50 }deg) rotateY(${ x * 50 }deg)`; // ← Increased angle
   });
 
   card.addEventListener('mouseleave', () => {
