@@ -1,91 +1,63 @@
-body.light {
-  background-color: #f9f9f9;
-  color: #222;
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  transition: all 0.3s ease;
 }
 
-body.dark {
-  background-color: #121212;
-  color: #f0f0f0;
+.light {
+  background: #fefefe;
+  color: #111;
 }
 
-body.dark .btn {
-  background-color: #222;
-  color: white;
-}
-
-body.dark .feature-box,
-body.dark .course-card,
-body.dark .contact {
-  background-color: #1e1e1e;
-  color: #f0f0f0;
+.dark {
+  background: #121212;
+  color: #e0e0e0;
 }
 
 .toggle-controls {
   display: flex;
   justify-content: flex-end;
-  gap: 10px;
   padding: 10px 20px;
+  gap: 10px;
 }
 
 .toggle-controls button {
-  background: none;
-  border: 1px solid #ccc;
-  padding: 6px 12px;
+  padding: 8px 14px;
+  background-color: transparent;
+  border: 1px solid #999;
   border-radius: 6px;
   cursor: pointer;
-  font-weight: 600;
-}
-
-.toggle-controls button:hover {
-  background-color: #eee;
-}
-
-body.dark .toggle-controls button:hover {
-  background-color: #333;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Inter', sans-serif;
-  line-height: 1.6;
+  font-weight: 500;
 }
 
 .hero {
-  background: linear-gradient(135deg, #4e54c8, #8f94fb);
-  color: white;
   padding: 80px 20px;
+  background: linear-gradient(to right, #2f3b52, #586e8d);
+  color: white;
   text-align: center;
 }
 
 .hero h1 {
+  font-family: 'DM Serif Display', serif;
   font-size: 3rem;
   margin-bottom: 10px;
 }
 
 .tagline {
+  font-style: italic;
   font-size: 1.2rem;
   margin-bottom: 20px;
-  font-style: italic;
 }
 
 .btn {
-  display: inline-block;
   padding: 12px 24px;
-  background-color: white;
-  color: #4e54c8;
-  border-radius: 6px;
-  font-weight: bold;
+  background: white;
+  color: #2f3b52;
+  border-radius: 4px;
   text-decoration: none;
-  transition: 0.3s;
-}
-
-.btn:hover {
-  background-color: #e0e0e0;
+  font-weight: bold;
 }
 
 section {
@@ -95,6 +67,7 @@ section {
 }
 
 h2 {
+  font-family: 'DM Serif Display', serif;
   font-size: 2rem;
   text-align: center;
   margin-bottom: 40px;
@@ -109,42 +82,32 @@ h2 {
 
 .feature-box,
 .course-card {
-  background-color: white;
+  background: #fff;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   text-align: center;
 }
 
+.dark .feature-box,
+.dark .course-card {
+  background: #1e1e1e;
+}
+
 .about .philosophy {
-  margin-top: 20px;
   font-style: italic;
-  color: #555;
-}
-
-.contact {
-  background-color: #f0f4ff;
-  border-radius: 10px;
-  padding: 40px 20px;
-}
-
-.contact-form {
   margin-top: 20px;
-  display: grid;
-  gap: 15px;
+  color: #444;
 }
 
-.contact-form input,
-.contact-form textarea {
-  padding: 12px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  width: 100%;
+.contact p {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
 }
 
 footer {
   text-align: center;
   padding: 20px;
-  background-color: #eaeaea;
   font-size: 0.9rem;
+  background: #eee;
 }
