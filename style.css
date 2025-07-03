@@ -1,4 +1,3 @@
-/* Base styles */
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
@@ -6,6 +5,7 @@ body {
   line-height: 1.6;
   transition: all 0.3s ease;
   color: #111;
+  background-color: #fdfdfd;
 }
 
 .dark {
@@ -13,7 +13,6 @@ body {
   color: #e0e0e0;
 }
 
-/* Toggle Controls */
 .toggle-controls {
   display: flex;
   justify-content: flex-end;
@@ -30,7 +29,6 @@ body {
   font-weight: 500;
 }
 
-/* Hero Section */
 .hero {
   padding: 80px 20px;
   background: linear-gradient(to right, #2f3b52, #586e8d);
@@ -64,42 +62,30 @@ body {
   position: relative;
 }
 
-/* Animated equations in hero */
-.hero::before {
-  content: "";
+/* Animated equation texts inside hero */
+.hero .equation {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("https://i.ibb.co/jDG7CDR/equations-light.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  opacity: 0.08;
-  animation: floatEquations 15s infinite linear;
-  z-index: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  opacity: 0.1;
+  white-space: nowrap;
+  animation: floatEquations 20s linear infinite;
   pointer-events: none;
+  color: #fff;
+  font-style: italic;
 }
 
-.dark .hero::before {
-  background-image: url("https://i.ibb.co/gRwX3P2/equations-dark.png");
-  opacity: 0.05;
-}
+.hero .eq1 { top: 10%; left: 5%; animation-delay: 0s; }
+.hero .eq2 { top: 30%; left: 80%; animation-delay: 5s; }
+.hero .eq3 { top: 60%; left: 15%; animation-delay: 10s; }
+.hero .eq4 { top: 80%; left: 65%; animation-delay: 15s; }
 
 @keyframes floatEquations {
-  0% {
-    transform: translateY(0px) scale(1);
-  }
-  50% {
-    transform: translateY(-20px) scale(1.05);
-  }
-  100% {
-    transform: translateY(0px) scale(1);
-  }
+  0%   { transform: translateY(0px) scale(1); }
+  50%  { transform: translateY(-20px) scale(1.05); }
+  100% { transform: translateY(0px) scale(1); }
 }
 
-/* Sections */
 section {
   padding: 60px 20px;
   max-width: 1100px;
@@ -134,7 +120,6 @@ h2 {
   background: #1e1e1e;
 }
 
-/* About */
 .about .philosophy {
   font-style: italic;
   margin-top: 20px;
@@ -145,13 +130,11 @@ h2 {
   color: #ccc;
 }
 
-/* Contact */
 .contact p {
   font-size: 1.1rem;
   margin-bottom: 10px;
 }
 
-/* Footer */
 footer {
   text-align: center;
   padding: 20px;
