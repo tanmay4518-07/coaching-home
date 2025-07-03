@@ -1,15 +1,14 @@
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Outfit', sans-serif;
   margin: 0;
   padding: 0;
-  line-height: 1.6;
-  transition: all 0.3s ease;
+  background: #f0f0f0;
   color: #111;
-  background-color: #fdfdfd;
+  transition: 0.3s;
 }
 
 .dark {
-  background-color: #121212;
+  background: #0f0f0f;
   color: #e0e0e0;
 }
 
@@ -21,128 +20,128 @@ body {
 }
 
 .toggle-controls button {
-  padding: 8px 14px;
-  background-color: transparent;
-  border: 1px solid #999;
-  border-radius: 6px;
+  background: rgba(200,200,200,0.2);
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 8px 12px;
   cursor: pointer;
-  font-weight: 500;
 }
 
 .hero {
-  padding: 80px 20px;
-  background: linear-gradient(to right, #2f3b52, #586e8d);
-  color: white;
+  padding: 100px 20px;
   text-align: center;
   position: relative;
   overflow: hidden;
-  z-index: 1;
 }
 
 .hero h1 {
-  font-family: 'DM Serif Display', serif;
   font-size: 3rem;
   margin-bottom: 10px;
 }
 
 .tagline {
-  font-style: italic;
   font-size: 1.2rem;
+  font-style: italic;
   margin-bottom: 20px;
 }
 
 .btn {
-  padding: 12px 24px;
-  background: white;
-  color: #2f3b52;
-  border-radius: 4px;
+  padding: 10px 24px;
+  background: #fff;
+  border-radius: 30px;
   text-decoration: none;
   font-weight: bold;
-  z-index: 2;
-  position: relative;
+  color: #2f3b52;
+  transition: 0.3s;
 }
 
-/* Animated equation texts inside hero */
-.hero .equation {
-  position: absolute;
-  font-size: 1.2rem;
-  font-weight: 600;
-  opacity: 0.1;
-  white-space: nowrap;
-  animation: floatEquations 20s linear infinite;
-  pointer-events: none;
+.btn:hover {
+  background: #2f3b52;
   color: #fff;
+}
+
+/* Equations */
+.equation {
+  position: absolute;
+  opacity: 0.05;
+  font-size: 1.4rem;
   font-style: italic;
+  pointer-events: none;
+  animation: float 10s infinite ease-in-out;
+}
+.eq1 { top: 20%; left: 10%; animation-delay: 0s; }
+.eq2 { top: 50%; left: 80%; animation-delay: 3s; }
+.eq3 { top: 70%; left: 30%; animation-delay: 6s; }
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
 }
 
-.hero .eq1 { top: 10%; left: 5%; animation-delay: 0s; }
-.hero .eq2 { top: 30%; left: 80%; animation-delay: 5s; }
-.hero .eq3 { top: 60%; left: 15%; animation-delay: 10s; }
-.hero .eq4 { top: 80%; left: 65%; animation-delay: 15s; }
-
-@keyframes floatEquations {
-  0%   { transform: translateY(0px) scale(1); }
-  50%  { transform: translateY(-20px) scale(1.05); }
-  100% { transform: translateY(0px) scale(1); }
-}
-
+/* Sections */
 section {
   padding: 60px 20px;
-  max-width: 1100px;
+  max-width: 1000px;
   margin: auto;
 }
 
 h2 {
-  font-family: 'DM Serif Display', serif;
   font-size: 2rem;
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
-.feature-grid,
-.course-grid {
+.feature-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 20px;
 }
 
-.feature-box,
-.course-card {
-  background: #fff;
+.feature-box {
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border-radius: 12px;
   text-align: center;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
-.dark .feature-box,
-.dark .course-card {
-  background: #1e1e1e;
+.dark .feature-box {
+  background: rgba(255, 255, 255, 0.05);
 }
 
-.about .philosophy {
+.about p {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.philosophy {
   font-style: italic;
-  margin-top: 20px;
-  color: #444;
-}
-
-.dark .about .philosophy {
-  color: #ccc;
+  color: #555;
 }
 
 .contact p {
-  font-size: 1.1rem;
-  margin-bottom: 10px;
+  text-align: center;
+  margin: 10px;
 }
 
+/* Glass Style */
+.glass {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(16px);
+  border-radius: 20px;
+  margin: 30px auto;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+}
+
+.dark .glass {
+  background: rgba(255,255,255,0.05);
+}
+
+/* Footer */
 footer {
   text-align: center;
   padding: 20px;
   font-size: 0.9rem;
-  background: #eee;
-}
-
-.dark footer {
-  background: #1a1a1a;
-  color: #ccc;
 }
