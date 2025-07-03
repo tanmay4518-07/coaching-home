@@ -13,11 +13,7 @@ body {
   color: #111;
 }
 
-.dark {
-  background-color: #121212;
-  background-image: url('https://i.ibb.co/G5BzF0k/dark-physics-bg.png');
-  color: #e0e0e0;
-}
+ 
 
 /* Toggle controls */
 .toggle-controls {
