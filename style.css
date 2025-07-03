@@ -1,156 +1,137 @@
+/* Reset and theme */
 body {
-  font-family: 'Outfit', sans-serif;
   margin: 0;
-  padding: 0;
-  background: #f0f0f0;
+  font-family: 'Outfit', sans-serif;
+  background: #0c0f1a;
+  color: #ffffff;
+  transition: background 0.4s, color 0.4s;
+  overflow-x: hidden;
+}
+.light {
+  background: #e6f0ff;
   color: #111;
-  transition: 0.3s ease;
+}
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-.dark {
-  background: #0f0f0f;
-  color: #e0e0e0;
-}
-
+/* Background glow animation */
 body::before {
   content: "";
   position: fixed;
-  top: -50%;
-  left: -50%;
+  top: -30%;
+  left: -30%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, #dce6ff, #eef3ff, #e2f0ff);
-  z-index: -2;
-  animation: rotateBG 25s linear infinite;
-  opacity: 0.3;
+  background: radial-gradient(circle, #00f0ff88, #002aff22, transparent);
+  animation: rotateGlow 20s linear infinite;
+  z-index: -1;
+  opacity: 0.2;
 }
-
-.dark::before {
-  background: radial-gradient(circle, #0d1b2a, #121212, #090f1a);
-}
-
-@keyframes rotateBG {
+@keyframes rotateGlow {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
 
+/* Toggle buttons */
 .toggle-controls {
   display: flex;
   justify-content: flex-end;
-  padding: 10px 20px;
   gap: 10px;
+  padding: 12px 20px;
 }
-
 .toggle-controls button {
-  background: rgba(200,200,200,0.2);
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 8px 12px;
+  padding: 6px 14px;
+  border-radius: 10px;
+  border: none;
+  background: #ffffff22;
+  backdrop-filter: blur(6px);
+  color: inherit;
   cursor: pointer;
 }
 
-.parallax-wrap {
+/* Section styles */
+.wrapper {
   perspective: 1000px;
-  transform-style: preserve-3d;
 }
-
-.parallax-layer {
-  transform: translateZ(30px);
-  transition: transform 0.3s ease;
-}
-
-.hero {
+.section {
   padding: 100px 20px;
   text-align: center;
-  position: relative;
+  transition: transform 0.3s ease;
 }
-
-.hero h1 {
+h1 {
   font-size: 3rem;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
-
-.tagline {
-  font-size: 1.2rem;
-  font-style: italic;
-  margin-bottom: 20px;
-}
-
-.btn {
-  padding: 10px 24px;
-  background: #fff;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: bold;
-  color: #2f3b52;
-  transition: 0.3s;
-}
-
-.btn:hover {
-  background: #2f3b52;
-  color: #fff;
-}
-
-section {
-  padding: 60px 20px;
-  max-width: 1000px;
-  margin: auto;
-}
-
 h2 {
   font-size: 2rem;
-  text-align: center;
   margin-bottom: 30px;
 }
+p {
+  max-width: 700px;
+  margin: 10px auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 30px;
+  background: #00f0ff;
+  color: #000;
+  font-weight: bold;
+  border-radius: 30px;
+  transition: 0.3s ease;
+}
+.btn:hover {
+  background: #ffffff;
+  color: #111;
+}
 
-.feature-grid {
+/* Cards */
+.grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 20px;
+  max-width: 800px;
+  margin: auto;
 }
-
-.feature-box {
+.card {
   padding: 20px;
-  border-radius: 12px;
-  text-align: center;
+  border-radius: 16px;
+  background: rgba(0, 255, 255, 0.1);
   backdrop-filter: blur(10px);
-  background: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
 }
 
-.dark .feature-box {
-  background: rgba(255, 255, 255, 0.05);
-}
-
-.about p {
-  text-align: center;
-  margin-bottom: 15px;
-}
-
-.philosophy {
-  font-style: italic;
-  color: #555;
-}
-
-.contact p {
-  text-align: center;
-  margin: 10px;
-}
-
+/* Glass and neon */
 .glass {
-  background: rgba(255,255,255,0.1);
-  backdrop-filter: blur(16px);
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
   border-radius: 20px;
-  margin: 30px auto;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+  margin: 40px auto;
+  width: 90%;
+  max-width: 1000px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 30px rgba(0, 255, 255, 0.1);
+}
+.light .glass {
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
-.dark .glass {
-  background: rgba(255,255,255,0.05);
-}
-
+/* Footer */
 footer {
   text-align: center;
-  padding: 20px;
+  padding: 40px 10px;
   font-size: 0.9rem;
+  opacity: 0.6;
+}
+
+/* Parallax effect */
+.parallax {
+  will-change: transform;
 }
