@@ -1,11 +1,11 @@
-// Theme Toggle
+// Theme toggle
 const themeBtn = document.getElementById('themeToggle');
 themeBtn.onclick = () => {
   const isLight = document.body.classList.toggle('light');
   themeBtn.textContent = isLight ? '🌙' : '☀️';
 };
 
-// Language Toggle
+// Language toggle
 const langBtn = document.getElementById('languageToggle');
 langBtn.onclick = () => {
   const isHindi = langBtn.textContent === 'हिन्दी';
@@ -15,11 +15,17 @@ langBtn.onclick = () => {
   });
 };
 
-// Stronger 3D Parallax
-document.addEventListener('mousemove', (e) => {
-  const x = (e.clientX / window.innerWidth - 0.5) * 60;
-  const y = (e.clientY / window.innerHeight - 0.5) * 60;
-  document.querySelectorAll('.parallax').forEach(layer => {
-    layer.style.transform = `rotateX(${-y}deg) rotateY(${x}deg)`;
+// Hover-based parallax effect
+document.querySelectorAll('.parallax').forEach(section => {
+  section.addEventListener('mousemove', (e) => {
+    const rect = section.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    section.style.transform = `rotateX(${ -y * 15 }deg) rotateY(${ x * 15 }deg)`;
+  });
+
+  section.addEventListener('mouseleave', () => {
+    section.style.transform = `rotateX(0deg) rotateY(0deg)`;
   });
 });
+
