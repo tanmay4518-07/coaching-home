@@ -1,19 +1,17 @@
-// Theme Toggle
-const themeToggle = document.getElementById("themeToggle");
-themeToggle.addEventListener("click", () => {
-  document.body.classList.toggle("dark");
-  const darkMode = document.body.classList.contains("dark");
-  themeToggle.textContent = darkMode ? "☀️ Light Mode" : "🌙 Dark Mode";
-});
+const themeBtn = document.getElementById('themeToggle');
+const langBtn = document.getElementById('languageToggle');
 
-// Language Toggle
-const langToggle = document.getElementById("languageToggle");
-let isHindi = false;
+themeBtn.onclick = () => {
+  document.body.classList.toggle('dark');
+  themeBtn.textContent = document.body.classList.contains('dark') ? '☀️ Light Mode' : '🌙 Dark Mode';
+};
 
-langToggle.addEventListener("click", () => {
-  isHindi = !isHindi;
-  document.querySelectorAll("[data-en]").forEach((el) => {
-    el.textContent = isHindi ? el.getAttribute("data-hi") : el.getAttribute("data-en");
+langBtn.onclick = () => {
+  const isHindi = langBtn.textContent === 'हिन्दी';
+  langBtn.textContent = isHindi ? 'English' : 'हिन्दी';
+
+  document.querySelectorAll('[data-en]').forEach(el => {
+    el.textContent = isHindi ? el.getAttribute('data-hi') : el.getAttribute('data-en');
   });
-  langToggle.textContent = isHindi ? "English" : "हिन्दी";
-});
+};
+
