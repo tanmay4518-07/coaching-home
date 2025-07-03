@@ -1,21 +1,25 @@
+/* Base styles */
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
   line-height: 1.6;
   transition: all 0.3s ease;
-}
-
-.light {
-  background: #fefefe;
+  background-image: url('https://i.ibb.co/3h3n3pS/physics-math-bg.png');
+  background-repeat: repeat;
+  background-size: contain;
+  background-attachment: fixed;
+  background-position: center;
   color: #111;
 }
 
 .dark {
-  background: #121212;
+  background-color: #121212;
+  background-image: url('https://i.ibb.co/G5BzF0k/dark-physics-bg.png');
   color: #e0e0e0;
 }
 
+/* Toggle controls */
 .toggle-controls {
   display: flex;
   justify-content: flex-end;
@@ -32,11 +36,14 @@ body {
   font-weight: 500;
 }
 
+/* Hero section */
 .hero {
   padding: 80px 20px;
   background: linear-gradient(to right, #2f3b52, #586e8d);
   color: white;
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
 .hero h1 {
@@ -60,6 +67,7 @@ body {
   font-weight: bold;
 }
 
+/* Sections */
 section {
   padding: 60px 20px;
   max-width: 1100px;
@@ -73,6 +81,7 @@ h2 {
   margin-bottom: 40px;
 }
 
+/* Feature & course cards */
 .feature-grid,
 .course-grid {
   display: grid;
@@ -94,20 +103,32 @@ h2 {
   background: #1e1e1e;
 }
 
+/* About section */
 .about .philosophy {
   font-style: italic;
   margin-top: 20px;
   color: #444;
 }
 
+.dark .about .philosophy {
+  color: #ccc;
+}
+
+/* Contact */
 .contact p {
   font-size: 1.1rem;
   margin-bottom: 10px;
 }
 
+/* Footer */
 footer {
   text-align: center;
   padding: 20px;
   font-size: 0.9rem;
   background: #eee;
+}
+
+.dark footer {
+  background: #1a1a1a;
+  color: #ccc;
 }
