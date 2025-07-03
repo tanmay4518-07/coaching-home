@@ -99,7 +99,10 @@ p {
   backdrop-filter: blur(10px);
   border: 1px solid rgba(0, 255, 255, 0.2);
   box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+  transition: transform 0.2s ease;
+  transform-style: preserve-3d;
 }
+
 
 .glass {
   background: rgba(255, 255, 255, 0.03);
